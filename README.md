@@ -5,6 +5,12 @@ Fine Tuned GPT-2 for Advertising Campaigns
 
 This project provides a web application for generating advertising copy using a fine-tuned GPT-2 language model. The application is built using Flask, a lightweight WSGI web application framework in Python.
  Project Structure
+ ## Download Required Files
+
+Due to storage limitations, some large files are hosted externally. Please download the following files and place them in the appropriate directories:
+
+- **Model Checkpoints**: [Download Link](https://drive.google.com/file/d/10qkPbKMrTbIBWfDiV89FDz41f0OIOkCm/view?usp=drive_link)
+- **Optimizer pt**: [Download Link](https://drive.google.com/file/d/1RSWdbykHb7l1StKurYmSuFkXWv_SiWLr/view?usp=drive_link)
 
 - app.py: The main Flask application script.
 - generate_text.py: Script for loading the fine-tuned GPT-2 model and generating text.
