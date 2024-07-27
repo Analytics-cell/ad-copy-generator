@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ad Copy Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 50%; margin: auto; padding: 20px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ad Copy Generator</h1>
+        <form id="generate-form">
+            <input type="text" id="prompt" placeholder="Enter your prompt here" required>
+            <button type="submit">Generate Ad Copy</button>
+        </form>
+        <h2>Generated Ad Copy:</h2>
+        <div id="ad-copy"></div>
+    </div>
+    <script>
+        document.getElementById('generate-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const prompt = document.getElementById('prompt').value;
+            const response = await fetch('/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: prompt })
+            });
+            const result = await response.json();
+            document.getElementById('ad-copy').innerText = result.ad_copy;
+        });
+    </script>
+</body>
+</html>
